@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-calendar-nav-bar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalendarNavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activeRoute: ActivatedRoute) { }
+
+  get selectedMonth(): number {
+    return +this.activeRoute.snapshot.paramMap.get('id');
+  }
 
   ngOnInit() {
+    console.log(this.selectedMonth);
   }
 
 }

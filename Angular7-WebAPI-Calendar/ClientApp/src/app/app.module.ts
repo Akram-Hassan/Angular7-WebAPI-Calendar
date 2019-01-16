@@ -24,7 +24,18 @@ import { PageHeaderComponent } from './page-header/page-header.component';
     FormsModule,
 
     RouterModule.forRoot([
-      { path: '', component: AppComponent, pathMatch: 'full' },
+      {
+        path: 'calendar/:month',
+        component: MeetingListComponent,
+        pathMatch: 'full',
+        children: [
+          {
+            path: 'meeting/:id',
+            component: MeetingDetailsComponent,
+          }
+        ]
+      },
+
     ])
   ],
   providers: [],

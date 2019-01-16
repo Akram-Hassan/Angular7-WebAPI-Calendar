@@ -2,19 +2,12 @@
   <div class="col-md-12">
     <p>choose your month</p>
 
-    <ul class="nav nav-pills">
-      <li><a href="#">Jan</a></li>
-      <li><a href="#">Feb</a></li>
-      <li><a href="#">Mar</a></li>
-      <li class="active"><a href="#">Apr</a></li>
-      <li><a href="#">May</a></li>
-      <li><a href="#">Jun</a></li>
-      <li><a href="#">Jul</a></li>
-      <li><a href="#">Aug</a></li>
-      <li><a href="#">Sep</a></li>
-      <li><a href="#">Cot</a></li>
-      <li><a href="#">Nov</a></li>
-      <li><a href="#">Dec</a></li>
+    <ul>
+      <li
+          *ngFor="let month of ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+          ; let i = index">
+        <a routerLink="calendar/{{i+1}}" routerLinkActive="active">{{month}}</a>
+      </li>
     </ul>
   </div>
 </div>
