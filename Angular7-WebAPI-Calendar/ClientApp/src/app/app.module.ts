@@ -5,10 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { CalendarNavBarComponent } from './calendar-nav-bar/calendar-nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CalendarNavBarComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
