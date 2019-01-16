@@ -7,12 +7,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CalendarNavBarComponent } from './calendar-nav-bar/calendar-nav-bar.component';
 import { MeetingListComponent } from './meeting-list/meeting-list.component';
+import { MeetingDetailsComponent } from './meeting-details/meeting-details.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarNavBarComponent,
     MeetingListComponent,
+    MeetingDetailsComponent,
+    PageHeaderComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,38 +1,9 @@
 
 <div class='container-fluid'>
-  <div class="row">
-    <div class='col-md-8'>
-      Calendar
-    </div>
-    <div class="col-md-4">
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Home</button>
-        <button type="button" class="btn btn-secondary">About</button>
-        <button type="button" class="btn btn-secondary">Calednar</button>
-      </div>
-    </div>
-  </div>
-
+  <app-page-header></app-page-header>
   <app-calendar-nav-bar></app-calendar-nav-bar>
-
   <div class="row">
-
-      <app-meeting-list></app-meeting-list>
-
-      <div class="col-md-6">
-        <div>Description: <p>Project meeting</p></div>
-        <div>Date: <p>028/19/2014 12:00 PM</p></div>
-        <div>Organizer: <p>John Someone</p></div>
-        <div>
-          Attendees:
-          <ul>
-            <li>Attendee 1</li>
-            <li>Attendee 2</li>
-            <li>Attendee 3</li>
-            <li>Attendee 4</li>
-          </ul>
-        </div>
-      </div>
-
+    <app-meeting-list></app-meeting-list>
+    <app-meeting-details></app-meeting-details>
   </div>
 </div>
