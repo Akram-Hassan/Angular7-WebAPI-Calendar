@@ -1,4 +1,4 @@
-export class Attendee {
+export class Meeting {
     id: number;
     name: string;
 }
