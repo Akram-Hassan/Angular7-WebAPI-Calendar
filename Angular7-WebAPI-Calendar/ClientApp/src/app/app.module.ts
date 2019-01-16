@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CalendarNavBarComponent } from './calendar-nav-bar/calendar-nav-bar.component';
+import { MeetingListComponent } from './meeting-list/meeting-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarNavBarComponent,
+    MeetingListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
