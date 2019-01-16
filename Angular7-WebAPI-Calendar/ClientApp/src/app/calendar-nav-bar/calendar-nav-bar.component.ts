@@ -7,15 +7,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./calendar-nav-bar.component.css']
 })
 export class CalendarNavBarComponent implements OnInit {
-
-  constructor(private activeRoute: ActivatedRoute) { }
-
-  get selectedMonth(): number {
-    return +this.activeRoute.snapshot.paramMap.get('id');
-  }
+  constructor() { }
 
   ngOnInit() {
-    console.log(this.selectedMonth);
   }
-
 }
