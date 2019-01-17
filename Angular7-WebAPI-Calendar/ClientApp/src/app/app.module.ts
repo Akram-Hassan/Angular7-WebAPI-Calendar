@@ -7,6 +7,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { MeetingDetailsComponent } from './meeting-details/meeting-details.component';
 import { CalendarNavBarComponent } from './calendar-nav-bar/calendar-nav-bar.component';
 import { MeetingListComponent } from './meeting-list/meeting-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MeetingListComponent } from './meeting-list/meeting-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

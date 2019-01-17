@@ -25,20 +25,20 @@ namespace Angular7_WebAPI_Calendar.Controllers
                 Name = $"Event {index}",
                 Date = new DateTime(2000,index,1)
             })
-            .Where(x => x.Date.Month == month)
-            ;
+            .Where(x => x.Date.Month == month);
         }
 
         [HttpGet("meeting/{id}")]
-        public IEnumerable<Attendee> MeetingDetails(int id)
+        public Meeting MeetingDetails(int id)
         {
             var rng = new Random();
-            return Enumerable.Range(1, 6).Select(index => new Attendee
+            return Enumerable.Range(1, 6).Select(index => new Meeting
             {
                 ID = index,
-                Name = $"Attendee {index}"
+                Name = $"Event {index}",
+                Date = new DateTime(2000, index, 1)
             })
-            .Where(x => x.ID == id);
+            .FirstOrDefault(x => x.ID == id);
         }
     }
 }
