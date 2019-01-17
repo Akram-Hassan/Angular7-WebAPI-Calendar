@@ -1,3 +1,9 @@
 <div class="col-md-6">
   {{selectedMeeting.name}}
+  <p>Attendees</p>
+  <ul>
+    <li *ngFor="let attendee of selectedMeeting.attendees">
+      {{attendee.name}}
+    </li>
+  </ul>
 </div>
