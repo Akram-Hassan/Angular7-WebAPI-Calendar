@@ -1,42 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { MeetingDetailsComponent } from './meeting-details/meeting-details.component';
 import { CalendarNavBarComponent } from './calendar-nav-bar/calendar-nav-bar.component';
 import { MeetingListComponent } from './meeting-list/meeting-list.component';
-import { MeetingDetailsComponent } from './meeting-details/meeting-details.component';
-import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalendarNavBarComponent,
-    MeetingListComponent,
-    MeetingDetailsComponent,
     PageHeaderComponent,
+    MeetingDetailsComponent,
+    CalendarNavBarComponent,
+    MeetingListComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-
-    RouterModule.forRoot([
-      {
-        path: 'calendar/:month',
-        component: MeetingListComponent,
-        pathMatch: 'full',
-        children: [
-          {
-            path: 'meeting/:id',
-            component: MeetingDetailsComponent,
-          }
-        ]
-      },
-
-    ])
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

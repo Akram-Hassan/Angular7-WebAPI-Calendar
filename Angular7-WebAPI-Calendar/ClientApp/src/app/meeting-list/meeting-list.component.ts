@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { filter, switchMap } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-meeting-list',
@@ -11,25 +7,9 @@ import { filter, switchMap } from 'rxjs/operators';
 })
 export class MeetingListComponent implements OnInit {
 
-  constructor(private activeRoute: ActivatedRoute, private router: Router) {
-    this.navStart = router.events.pipe(
-      filter(evt => evt instanceof NavigationEnd)
-    ) as Observable<NavigationEnd>;
-  }
-
-  navStart: Observable<NavigationEnd>;
-
-  get selectedMonth(): number {
-    return +this.activeRoute.snapshot.paramMap.get('month');
-  }
+  constructor() { }
 
   ngOnInit() {
-    this.onMonthSelected(this.selectedMonth);
-    this.navStart.subscribe(evt => this.onMonthSelected(this.selectedMonth));
-  }
-
-  private onMonthSelected(month: number) {
-    console.log(month);
   }
 
 }
