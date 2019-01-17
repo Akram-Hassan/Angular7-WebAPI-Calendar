@@ -10,35 +10,19 @@ namespace Angular7_WebAPI_Calendar.Controllers
     [Route("api/data")]
     public class DataController : Controller
     {
-        private static string[] Summaries = new[]
+        private readonly IDataRepository repository;
+
+        public DataController(IDataRepository repository)
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+            this.repository = repository;
+        }
 
         [HttpGet("meetings/{month}")]
-        public IEnumerable<Meeting> MonthMeetings(int month)
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 6).Select(index => new Meeting
-            {
-                ID = index,
-                Name = $"Event {index}",
-                Date = new DateTime(2000,index,1)
-            })
-            .Where(x => x.Date.Month == month);
-        }
+        public IEnumerable<Meeting> MonthMeetings(int month) =>
+            repository.GetMonthMeetings(month);
 
         [HttpGet("meeting/{id}")]
-        public Meeting MeetingDetails(int id)
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 6).Select(index => new Meeting
-            {
-                ID = index,
-                Name = $"Event {index}",
-                Date = new DateTime(2000, index, 1)
-            })
-            .FirstOrDefault(x => x.ID == id);
-        }
+        public Meeting MeetingDetails(int id) =>
+            repository.GetMeeting(id);
     }
 }
