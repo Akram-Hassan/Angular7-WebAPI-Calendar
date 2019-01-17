@@ -57,4 +57,8 @@ export class DataService {
   getMonthMeetings(month: number): Observable<Meeting[]> {
     return of(this.fakeData.filter(x => x.date.getMonth()  == month));
   }
+
+  getMeetingDetails(id: number) {
+    return of(this.fakeData.filter(x => x.id == id)[0]);
+  }
 }

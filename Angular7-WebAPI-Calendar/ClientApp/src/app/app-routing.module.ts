@@ -7,7 +7,6 @@ const routes: Routes = [
   {
     path: 'calendar/:month',
     component: MeetingListComponent,
-    pathMatch: 'full',
     children: [
       {
         path: 'meeting/:id',

@@ -14,12 +14,12 @@ import { Meeting } from '../_models/Meeting';
 export class MeetingListComponent implements OnInit {
 
   constructor(private activeRoute: ActivatedRoute, private router: Router, private service: DataService) {
-    this.navStart = router.events.pipe(
+    this.navigationEndEvent = router.events.pipe(
       filter(evt => evt instanceof NavigationEnd)
     ) as Observable<NavigationEnd>;
   }
 
-  navStart: Observable<NavigationEnd>;
+  navigationEndEvent: Observable<NavigationEnd>;
   selectedData: Meeting[];
 
   get selectedMonth(): number {
@@ -28,7 +28,7 @@ export class MeetingListComponent implements OnInit {
 
   ngOnInit() {
     this.onMonthSelected(this.selectedMonth);
-    this.navStart.subscribe(evt => this.onMonthSelected(this.selectedMonth));
+    this.navigationEndEvent.subscribe(evt => this.onMonthSelected(this.selectedMonth));
   }
 
   private onMonthSelected(month: number) {

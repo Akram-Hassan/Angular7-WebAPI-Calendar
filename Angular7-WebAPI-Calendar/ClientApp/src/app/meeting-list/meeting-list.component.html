@@ -2,7 +2,10 @@
 
   <ul>
     <li *ngFor="let meeting of selectedData">
-      <span>{{meeting.date | date:'MM-dd-yyyy'}}   </span><a href="#">{{meeting.name}}</a>
+      <span>{{meeting.date | date:'MM-dd-yyyy'}}   </span>
+      <a routerLink="meeting/{{meeting.id}}">{{meeting.name}}</a>
     </li>
   </ul>
 </div>
+
+<router-outlet></router-outlet>
