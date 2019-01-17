@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Angular7_WebAPI_Calendar.DAL
+namespace DAL
 {
     public class Meeting
     {

@@ -1,4 +1,4 @@
-﻿namespace Angular7_WebAPI_Calendar.DAL
+﻿namespace DAL
 {
     public class Attendee
     {

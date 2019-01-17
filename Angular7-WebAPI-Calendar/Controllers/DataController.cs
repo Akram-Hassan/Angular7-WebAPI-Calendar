@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Angular7_WebAPI_Calendar.DAL;
+using DAL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular7_WebAPI_Calendar.Controllers
