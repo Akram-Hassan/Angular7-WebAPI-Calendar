@@ -1,0 +1,14 @@
+li {
+  display: inline-block;
+  margin: 15px;
+}
+
+li a {
+  text-decoration: none;
+  width: 100%;
+}
+
+  a.active {
+    background-color: #337ab7;
+    color: white;
+  }

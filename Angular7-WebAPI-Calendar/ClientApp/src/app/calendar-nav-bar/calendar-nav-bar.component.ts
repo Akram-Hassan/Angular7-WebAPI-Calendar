@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-calendar-nav-bar',
@@ -6,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar-nav-bar.component.css']
 })
 export class CalendarNavBarComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
-
 }
