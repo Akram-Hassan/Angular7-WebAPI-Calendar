@@ -1,8 +1,8 @@
 import { Attendee } from './Attendee';
 
 export class Meeting {
-    id: number;
-    month: number;
-    name: string;
-    attendees: Attendee[];
+  id: number;
+  date: Date;
+  name: string;
+  attendees: Attendee[];
 }   
