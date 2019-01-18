@@ -17,24 +17,17 @@ namespace DAL
         }
 
         public Meeting GetMeeting(int id)
-        {
-
-            Meeting meeting = context.Meetings.Include(x => x.Attendees)
+            => context.Meetings
+                .Include(x => x.Attendees)
                 .FirstOrDefault(x => x.ID == id);
 
-            //var attendees = meeting.Attendees;
-
-            ////Todo: Remove this
-            //meeting.Attendees = new List<Attendee>();
-            //foreach (var item in attendees)
-            //{
-            //    meeting.Attendees.Add(new Attendee { ID = item.ID, Name = item.Name });
-            //}
-
-            return meeting;
+        public IEnumerable<Meeting> GetMonthMeetings(int month)
+        {
+            if (month < 1 || month > 12)
+            {
+                throw new ArgumentException("Invalid Month Value");
+            }
+            return context.Meetings.Where(x => x.Date.Month == month);
         }
-
-        public IEnumerable<Meeting> GetMonthMeetings(int month) 
-            => context.Meetings.Where(x => x.Date.Month == month);
     }
 }
