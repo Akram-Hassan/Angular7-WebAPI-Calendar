@@ -1,5 +1,6 @@
 ﻿using Angular7_WebAPI_Calendar.Controllers;
 using DAL;
+using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,10 @@ namespace Testing
         [Test]
         public void TestGetOneMeeting()
         {
-            var meeting = controller.MeetingDetails(1);
+            var actionResult = controller.MeetingDetails(1);
+            var result = actionResult as OkObjectResult;
+            var meeting = result.Value as Meeting;
+
             Assert.That(meeting.ID, Is.EqualTo(1));
             Assert.That(meeting.Name, Is.EqualTo("Meeting 1"));
         }

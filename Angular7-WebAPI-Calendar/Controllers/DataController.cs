@@ -18,17 +18,17 @@ namespace Angular7_WebAPI_Calendar.Controllers
         }
 
         [HttpGet("meetings/{month}")]
-        public IEnumerable<Meeting> MonthMeetings(int month)
+        public IActionResult MonthMeetings(int month)
         {
             var result = repository.GetMonthMeetings(month);
 
-            return result;
+            return Ok(result);
         }
 
         [HttpGet("meeting/{id}")]
-        public Meeting MeetingDetails(int id)
+        public IActionResult MeetingDetails(int id)
         {
-            return repository.GetMeeting(id);
+            return Ok(repository.GetMeeting(id));
         }
     }
 }
