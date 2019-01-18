@@ -22,7 +22,7 @@ namespace Angular7_WebAPI_Calendar
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MyContext>(options =>
+            services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(
                 Configuration.GetConnectionString("MeetingsDatabase"))
             );
@@ -43,7 +43,7 @@ namespace Angular7_WebAPI_Calendar
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetRequiredService<MyContext>();
+                var context = serviceScope.ServiceProvider.GetRequiredService<AppDbContext>();
                 context.Database.EnsureCreated();
             }
 

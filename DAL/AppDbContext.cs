@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class MyContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public MyContext(DbContextOptions<MyContext> options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {}
 
         public DbSet<Attendee> Attendees { get; set; }

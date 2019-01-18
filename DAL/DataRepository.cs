@@ -9,9 +9,9 @@ namespace DAL
 {
     public class DataRepository : IDataRepository
     {
-        private readonly MyContext context;
+        private readonly AppDbContext context;
 
-        public DataRepository(MyContext context)
+        public DataRepository(AppDbContext context)
         {
             this.context = context;
         }

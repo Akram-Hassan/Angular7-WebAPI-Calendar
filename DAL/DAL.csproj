@@ -123,7 +123,7 @@
     <Compile Include="FakeRepository.cs" />
     <Compile Include="IDataRepository.cs" />
     <Compile Include="Meeting.cs" />
-    <Compile Include="MyContext.cs" />
+    <Compile Include="AppDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
