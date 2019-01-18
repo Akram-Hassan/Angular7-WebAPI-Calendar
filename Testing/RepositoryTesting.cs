@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Testing
 {
-    public class Tests
+    public class RepositoryTests
     {
         private AppDbContext context;
         private DataRepository repository;
