@@ -20,15 +20,26 @@ namespace Angular7_WebAPI_Calendar.Controllers
         [HttpGet("meetings/{month}")]
         public IActionResult MonthMeetings(int month)
         {
-            var result = repository.GetMonthMeetings(month);
+            if (month < 1 || month > 12)
+            {
+                return BadRequest();
+            }
 
+            var result = repository.GetMonthMeetings(month);
             return Ok(result);
         }
 
         [HttpGet("meeting/{id}")]
         public IActionResult MeetingDetails(int id)
         {
-            return Ok(repository.GetMeeting(id));
+            var meeting = repository.GetMeeting(id);
+            if (meeting == null)
+            {
+                return NotFound();
+            }
+            return Ok(meeting);
         }
+
+
     }
 }
