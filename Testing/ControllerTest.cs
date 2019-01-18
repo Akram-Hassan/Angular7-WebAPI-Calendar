@@ -7,25 +7,12 @@ using System.Text;
 
 namespace Testing
 {
-    public class ControllerTest
+    public class ControllerTest : BaseFixture
     {
-        private AppDbContext context;
-        private DataRepository repository;
-
         [SetUp]
-        public void Setup()
+        public void MySetup()
         {
-            context = AppContextFactory.CreateContext();
-            repository = new DataRepository(context);
             controller = new DataController(repository);
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            context.Dispose();
-            context = null;
-            repository = null;
         }
 
         private DataController controller;

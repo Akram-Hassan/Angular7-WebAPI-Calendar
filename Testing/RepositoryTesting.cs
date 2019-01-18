@@ -6,26 +6,8 @@ using System.Linq;
 
 namespace Testing
 {
-    public class RepositoryTests
+    public class RepositoryTests : BaseFixture
     {
-        private AppDbContext context;
-        private DataRepository repository;
-
-        [SetUp]
-        public void Setup()
-        {
-            context = AppContextFactory.CreateContext();
-            repository = new DataRepository(context);
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            context.Dispose();
-            context = null;
-            repository = null;
-        }
-
         [Test]
         public void TestGetOneMeeting()
         {
